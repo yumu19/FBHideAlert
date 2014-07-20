@@ -1,0 +1,29 @@
+{
+	"name": "FBHideAlert",
+	"description": "Hide Notifiation Number of Facebook Alert",
+	"version": "1.0",
+	"icons": {
+		"16":"FBHideAlert16.png",
+		"48":"FBHideAlert48.png",
+		"128":"FBHideAlert128.png"
+    },
+    "browser_action": {
+    	"default_icon": "hideAlert.png",
+    	"default_popup": "popup.html"
+  	},
+	"manifest_version": 2,
+    "permissions": [
+      "tabs", "https://www.facebook.com/*", "storage"
+    ],
+	"content_scripts": [
+		{
+			"matches": ["https://www.facebook.com/*"],
+			"js": ["jquery-1.11.1.min.js","background.js"],
+			"css": ["FBHideAlert.css"]
+		}
+
+	],
+	"web_accessible_resources" : [
+		"jquery.min.map"
+	]
+}
